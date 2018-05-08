@@ -222,6 +222,8 @@ const addResident = (req, res) => {
   });
 };
 
+const getCurrentUser = (req, res) => res.status(200).json({user: req.session.user});
+
 const residentForgotPassword = (req, res) => {
   const password = rand.generate(6);
   const {email} = req.body;
@@ -278,6 +280,7 @@ module.exports = {
   ownerLogin,
   logout,
   addResident,
+  getCurrentUser,
   residentForgotPassword,
   ownerForgotPassword,
 };

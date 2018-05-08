@@ -1,6 +1,6 @@
-import React, {Component, Fragment} from 'react';
-import {Link} from 'react-router-dom';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
+
 import NewUnit from './NewUnit/NewUnit';
 import {getPropertyById} from '../../../../redux/ducks/propertyReducer';
 import './Units.css';
@@ -16,7 +16,6 @@ class Units extends Component {
     this.onFromArrayDelete = this.onFromArrayDelete.bind(this);
   }
   componentDidMount() {
-    console.log(this.props);
     this.props.getPropertyById(this.props.match.params.id);
   }
 
@@ -52,7 +51,6 @@ class Units extends Component {
 
   onFromArrayDelete(index) {
     const {newUnits} = this.state;
-    console.log('index: ', index);
     if (newUnits.length >= 0) {
       const newUnitsCopy = [...newUnits];
       newUnitsCopy.splice(index, 1);

@@ -14,6 +14,7 @@ const {
   ownerRegistration,
   ownerLogin,
   addResident,
+  getCurrentUser,
   logout,
 } = require('./controllers/authenticationControllers');
 
@@ -90,6 +91,7 @@ app.post('/users/owner-login', ownerLogin);
 // User Endpoints
 app.get('/users/logout', logout);
 app.post('/users/add', addResident);
+app.get('/users/current', getCurrentUser);
 
 // Unit Endpoints
 app.post('/unit/add', addUnit);

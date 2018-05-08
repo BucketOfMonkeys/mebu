@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {createResident} from '../../../redux/ducks/userReducer';
 import {connect} from 'react-redux';
+
+import {createResident} from '../../../redux/ducks/userReducer';
 import './ResidentRegistration.css';
 
 class ResidentRegistration extends Component {
@@ -39,8 +40,6 @@ class ResidentRegistration extends Component {
     if (this.props.authenticated) {
       this.props.history.push('/');
     }
-
-    console.log(this.props.authenticated);
 
     return (
       <div className="ResidentRegistration">

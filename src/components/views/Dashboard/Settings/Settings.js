@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+
 import {
   getPropertyById,
   updatePropertyById,
   archivePropertyById,
 } from '../../../../redux/ducks/propertyReducer';
-import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
 
 class Settings extends Component {
   constructor(props) {
@@ -44,6 +44,11 @@ class Settings extends Component {
     });
   }
 
+  onArchiveClickHandler() {
+    this.props.archivePropertyById(this.props.match.params.id);
+    this.props.history.push('/owner/properties');
+  }
+
   handleChangeName(value) {
     this.setState({name: value});
   }
@@ -66,11 +71,6 @@ class Settings extends Component {
 
   handleChangeExpenses(value) {
     this.setState({expenses: value});
-  }
-
-  onArchiveClickHandler() {
-    this.props.archivePropertyById(this.props.match.params.id);
-    this.props.history.push('/owner/properties');
   }
 
   render() {
