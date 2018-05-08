@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+
 import {createOwner} from '../../../redux/ducks/userReducer';
 import logo from '../../../images/logo2-nobg.png';
 import './OwnerRegistration.css';
@@ -149,5 +150,4 @@ const mapStateToProps = state => ({
   ...state.userReducer,
 });
 
-// export default connect(null, {createOwner})(OwnerRegistration);
 export default connect(mapStateToProps, {createOwner})(OwnerRegistration);

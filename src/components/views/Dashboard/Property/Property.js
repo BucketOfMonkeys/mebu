@@ -6,14 +6,12 @@ import './Property.css';
 
 class Property extends Component {
   componentDidMount() {
-    console.log(this.props);
     this.props.getPropertyById(this.props.match.params.id);
   }
 
   render() {
     let property = <p>...loading</p>;
     if (this.props.selectedProperty && !this.props.loading) {
-      console.log(this.props.selectedProperty);
       const prop = this.props.selectedProperty;
       property = (
         <div>
