@@ -76,7 +76,7 @@ class OwnerLogin extends Component {
             </Link>
           </div>
           <div className="OwnerLogin__footer">
-            Don't have an account?{' '}
+            Don't have an account?
             <Link className="OwnerLogin__link Link__none" to="/login/owner/new">
               Get Started
             </Link>

@@ -3,13 +3,13 @@ import FontAwesome from 'react-fontawesome';
 import axios from 'axios';
 import {NavLink, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
+
 import {logoutUser} from '../../../redux/ducks/userReducer';
 import logo from '../../../images/logo_final_white.svg';
 import './Dashboard.css';
 
 class Dashboard extends Component {
   onLogout() {
-    console.log('logging out!');
     axios
       .get('/users/logout')
       .then((response) => {
@@ -21,7 +21,6 @@ class Dashboard extends Component {
 
   render() {
     const {path, params} = this.props.match;
-    console.log(this.props);
     return path.includes('/owner/') ? (
       <div className="Dashboard">
         <nav className="Dashboard__nav">

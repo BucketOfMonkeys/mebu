@@ -26,8 +26,6 @@ class BillingHistory extends Component {
     const re = /\b(\d+)(\d{2})\b/;
     const subst = '$1.$2';
 
-    console.log(this.props.billingHistory);
-
     if (this.props.billingHistory && this.props.billingHistory.length > 0) {
       mappedItems = this.props.billingHistory.map(item => (
         <BillingItems

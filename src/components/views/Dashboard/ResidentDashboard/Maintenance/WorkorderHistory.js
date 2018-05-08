@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 
 class WorkorderHistory extends Component {
   componentDidMount() {
-    console.log(this.props);
     this.props.getResidentWorkOrder();
   }
 

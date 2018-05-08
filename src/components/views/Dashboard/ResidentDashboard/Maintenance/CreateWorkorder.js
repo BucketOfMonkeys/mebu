@@ -26,26 +26,25 @@ class CreateWorkorder extends Component {
     });
   };
 
-  Submit = () => {
-    console.log(this.state);
+  submit = () => {
     axios
       .post('/workorder/addWorkorder', {
         content: this.state.content,
         urgency: this.state.urgency,
       })
-      .then(response => alert('Thank you for submitting your work order'));
+      .then();
   };
 
   render() {
     return (
       <div>
-        <h1>CreateWorkorder</h1>
-        <form>
+        <h1>Submit a Maintenance Request</h1>
+        <form onSubmit={() => this.submit()}>
           <div className="radio">
             <label>Priority</label>
             <br />
             <div onChange={e => this.handleUrgency(e)} value={this.state.urgency}>
-              <input type="radio" value="Low Priority" name="Priority" /> Low Priority
+              <input type="radio" value="Low Priority" name="Priority" required /> Low Priority
               <input type="radio" value="Routine" name="Priority" /> Routine
               <input type="radio" value="Urgent" name="Priority" /> Urgent
             </div>
@@ -60,11 +59,12 @@ class CreateWorkorder extends Component {
                 id="exampleFormControlTextarea1"
                 rows="12"
                 type="message"
+                required
               />
             </div>
           </div>
+          <button type="submit">Submit</button>
         </form>
-        <button onClick={() => this.Submit()}> Submit </button>
       </div>
     );
   }
