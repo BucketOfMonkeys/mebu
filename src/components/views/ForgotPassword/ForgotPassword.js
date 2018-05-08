@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import './ForgotPassword.css';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
+
 import {forgotPassword} from '../../../redux/ducks/userReducer';
+import './ForgotPassword.css';
 
 class ForgotPassword extends Component {
   constructor(props) {

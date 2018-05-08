@@ -4,16 +4,13 @@ import {getResidentInfo} from '../../../../../redux/ducks/residentReducer';
 import './Contacts.css';
 
 class Contacts extends Component {
-  constructor(props) {
-    super(props);
-  }
   componentDidMount() {
     this.props.getResidentInfo();
   }
 
   render() {
     const {residentInfo, loading, error} = this.props;
-    console.log(residentInfo);
+
     let residentInfoDisplay = <p>Loading...</p>;
     if (Object.keys(residentInfo).length > 0 && !loading && !error) {
       residentInfoDisplay = (

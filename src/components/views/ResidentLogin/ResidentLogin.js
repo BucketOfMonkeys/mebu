@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
+
 import {loginResident} from '../../../redux/ducks/userReducer';
 import logo from '../../../images/logo_final_white.svg';
-
 import './ResidentLogin.css';
 
 class ResidentLogin extends Component {

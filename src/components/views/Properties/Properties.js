@@ -2,10 +2,11 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
 import {Link, withRouter} from 'react-router-dom';
-import './Properties.css';
+
 import {getProperties} from '../../../redux/ducks/propertyReducer';
 import {logoutUser} from '../../../redux/ducks/userReducer';
 import logo from '../../../images/logo_final_blue.svg';
+import './Properties.css';
 
 class Properties extends Component {
   componentDidMount() {
@@ -13,7 +14,6 @@ class Properties extends Component {
   }
 
   onLogout() {
-    console.log('logging out!');
     axios
       .get('/users/logout')
       .then((response) => {

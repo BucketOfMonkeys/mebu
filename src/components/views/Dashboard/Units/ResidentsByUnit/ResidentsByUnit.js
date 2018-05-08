@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+
 import {getResidentsByUnitId} from '../../../../../redux/ducks/residentReducer';
 import './ResidentsByUnit.css';
 
@@ -48,4 +49,3 @@ class ResidentsByUnit extends Component {
 const mapStateToProps = state => ({...state.residentReducer});
 
 export default connect(mapStateToProps, {getResidentsByUnitId})(ResidentsByUnit);
-// export default connect(mapStateToProps, {getResidentsByUnitId})(ResidentsByUnit);
